@@ -1,0 +1,37 @@
+<div class="songs-list">
+
+    <div class="song-title mb-4">
+        <h3>Lista de canciones</h3>
+    </div>
+
+    <div class="song-search row mb-2">
+        <form [formGroup]="form">
+            <div class="col-12">
+              <input class="border-light rounded px-3 py-2 w-100" formControlName="search" placeholder="Introduzca título o autor..." type="search">
+            </div>
+        </form>
+    </div>
+
+    <div *ngFor="let song of filteredSongs; let i = index" class="song-block row">
+        <div class="col-8">
+            <div class="song-label col-12 pb-1">
+                <span>{{ song.title }}</span>
+            </div>
+            <div class="song-text col-12">
+                <span>{{ song.author }}</span>
+            </div>
+        </div>
+
+        <div class="col-4 song-button">
+            <button class="mx-1" (click)="playSong(i)">
+                <i class="bi bi-play-circle"></i>
+            </button>
+
+            <button class="mx-1" (click)="showDetails(i)">
+                <i class="bi bi-music-note-list"></i>
+            </button>
+        </div>
+
+        <app-song-detail *ngIf="song.showDetails" [song]="song"></app-song-detail>
+    </div>
+</div>

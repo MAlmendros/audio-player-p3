@@ -1,0 +1,41 @@
+<div class="song-detail row pt-2" *ngIf="song && song.id">
+    <div class="col-12 mb-2 song-title">
+        <span>
+            {{ song.title }}
+        </span>
+    </div>
+
+    <div class="col-12 song-text">
+        <div>
+            <label class="song-label">Autor:</label> {{ song.author }}
+        </div>
+
+        <div>
+            <label class="song-label">Año:</label> {{ song.year }}
+        </div>
+
+        <div>
+            <label class="song-label">Álbum:</label> {{ song.album }}
+        </div>
+
+        <div>
+            <label class="song-label">Estilo:</label> {{ song.genre }}
+        </div>
+
+        <div>
+            <label class="song-label">Discográfica:</label> {{ song.label }}
+        </div>
+        
+        <div>
+            <label class="song-label">País:</label> {{ song.country }}
+        </div>
+        
+        <div>
+            <label class="song-label">Duración:</label> {{ getDuration(song.duration) }}
+        </div>
+        
+        <div>
+            <label class="song-label">Productor:</label> {{ song.producer }}
+        </div>
+    </div>
+</div>

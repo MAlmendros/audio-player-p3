@@ -1,0 +1,62 @@
+footer {
+    background: #333;
+    bottom: 0;
+    color: #FFF;
+    height: 270px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+
+    .player-image {
+        margin-bottom: auto;
+        margin-top: auto;
+
+        img {
+            border: 8px solid #FFF;
+            height: 150px;
+            width: 150px;
+        }
+    }
+
+    .player-buttons {
+        font-size: 68px;
+        margin: auto 0;
+        text-align: center;
+
+        .player-button-pause {
+            margin-bottom: auto;
+            margin-top: auto;
+            text-align: right;
+        }
+
+        .player-button-play {
+            margin-bottom: auto;
+            margin-top: auto;
+            font-size: 124px;
+        }
+
+        .player-button-stop {
+            margin-bottom: auto;
+            margin-top: auto;
+            text-align: left;
+        }
+
+        button {
+            color: #FFF;
+            background-color: transparent;
+            border: none;
+        }
+    }
+
+    .player-progress {
+
+        .player-progress-bar {
+            width: 81%;
+        }
+        
+        .player-progress-time {
+            font-weight: bold;
+            margin: 0 8px;
+        }
+    }
+}
