@@ -8,7 +8,7 @@ import { CommonService } from './services/common.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public title: string = 'AUDIO PLAYER';
+  public title: string = "AUDIO PLAYER";
 
   public songsList: Song[] = [];
   public selectedSong: Song = {} as Song;

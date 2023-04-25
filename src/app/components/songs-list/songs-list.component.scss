@@ -1,38 +1,13 @@
-.songs-list {
-    background-color: #6F7681;
+@use '@angular/material' as mat;
 
-    .song-title {
-        color: #FF80DF;
-        font-size: 16px;
+mat-list-item {
+    height: auto !important;
+
+    &:hover {
+        background-color: #7986CB;
     }
+}
 
-    .song-block {
-        border: #000 solid 1px;
-        border-radius: 10px;
-        padding: 8px;
-        margin: 4px 0;
-    }
-
-    .song-button {
-        color: #000;
-        font-size: 26px;
-        margin: auto 0;
-        text-align: right;
-
-        button {
-            background-color: transparent;
-            border: none;
-        }
-    }
-
-    .song-label {
-        color: #000;
-        font-size: 14px;
-        font-weight: bold;
-    }
-
-    .song-text {
-        color: #FFF;
-        font-size: 14px;
-    }
+mat-icon:hover {
+    color: black !important;
 }

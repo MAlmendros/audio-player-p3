@@ -11,3 +11,8 @@ export interface Song {
     showDetails: boolean;
     producer: string;
 }
+
+export interface ColumnTitle {
+    id: string;
+    label: string;
+}
