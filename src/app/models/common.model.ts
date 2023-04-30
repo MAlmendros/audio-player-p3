@@ -8,11 +8,6 @@ export interface Song {
     label: string;
     country: string;
     duration: number;
-    showDetails: boolean;
     producer: string;
-}
-
-export interface ColumnTitle {
-    id: string;
-    label: string;
+    showDetails: boolean; // Esta variable es de control para mostrar o no el detalle.
 }

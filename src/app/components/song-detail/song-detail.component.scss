@@ -1,20 +1,11 @@
-.song-detail {
-    padding: 10px 12px;
+mat-form-field {
+    width: 100%;
+}
 
-    .song-title {
-        color: #FF80DF;
-        font-size: 16px;
-        font-weight: bold;
-    }
+mat-label {
+    color: #3F51B5;
+}
 
-    .song-label {
-        color: #000;
-        font-size: 14px;
-        font-weight: bold;
-    }
-
-    .song-text {
-        color: #000;
-        font-size: 14px;
-    }
+input {
+    color: #000 !important;
 }

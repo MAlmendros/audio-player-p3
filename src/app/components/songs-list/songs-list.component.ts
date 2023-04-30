@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 
-import { ColumnTitle, Song } from 'src/app/models/common.model';
+import { Song } from 'src/app/models/common.model';
 
 @Component({
   selector: 'app-songs-list',
@@ -38,6 +38,11 @@ export class SongsListComponent implements OnChanges {
   }
 
   public showDetails(i: number) {
+    const actualSong: Song | undefined = this.filteredSongs.find((song: Song) => song.showDetails);
+    if (actualSong) {
+      actualSong.showDetails = false;
+    }
+
     this.filteredSongs[i].showDetails = !this.filteredSongs[i].showDetails;
   }
 
