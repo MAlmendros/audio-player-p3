@@ -20,11 +20,14 @@ export class PlayerComponent implements OnChanges {
   public currentTime: number = 0;
   public duration: string = "";
   public durationTime: number = 0;
+  public volume: number = 50;
 
+  private audio;
 
-  private audio = new Audio();
-
-  constructor() { }
+  constructor() {
+    this.audio = new Audio();
+    this.audio.volume = 0.5;
+  }
 
   public ngOnInit(): void {
     this.audio.addEventListener("timeupdate", () => {
@@ -42,6 +45,15 @@ export class PlayerComponent implements OnChanges {
     }
   }
 
+  public formatVolume(value: number): string {
+    return `${value}`;
+  }
+
+  public changeVolume(volume: number): void {
+    this.volume = volume;
+    this.audio.volume = volume / 100;
+  }
+
   public pauseSong(): void {
     this.audio.pause();
   }
@@ -52,8 +64,8 @@ export class PlayerComponent implements OnChanges {
 
   public stopSong(): void {
     this.audio.pause();
+    this.restartSong();
 
-    this.showPlayer = false;
     this.stop.emit(true);
   }
 
@@ -61,6 +73,17 @@ export class PlayerComponent implements OnChanges {
     this.audioUrl = `../../assets/mp3/${this.song.id}.mp3`;
     this.imageUrl = `../../assets/img/${this.song.id}.png`;
 
+    this.current = "0:00";
+    this.currentTime = 0;
+    
+    this.restartSong();
+
+    this.playSong();
+
+    this.showPlayer = true;
+  }
+
+  private restartSong(): void {
     this.current = "0:00";
     this.currentTime = 0;
     
@@ -72,8 +95,5 @@ export class PlayerComponent implements OnChanges {
     this.audio.src = this.audioUrl;
 
     this.audio.load();
-    this.audio.play();
-
-    this.showPlayer = true;
   }
 }
